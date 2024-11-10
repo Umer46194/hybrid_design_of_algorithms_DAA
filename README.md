@@ -2,8 +2,8 @@
 
 #include <iostream>
 #include <vector>
-
-void insertionSort(std::vector<int>& arr, int left, int right) {
+using namespace std;
+void insertionSort(vector<int>& arr, int left, int right) {
     for (int i = left + 1; i <= right; ++i) {
         int key = arr[i];
         int j = i - 1;
@@ -15,7 +15,7 @@ void insertionSort(std::vector<int>& arr, int left, int right) {
     }
 }
 
-void merge(std::vector<int>& arr, int left, int mid, int right) {
+void merge(vector<int>& arr, int left, int mid, int right) {
     int leftSize = mid - left + 1;
     int rightSize = right - mid;
 
@@ -66,15 +66,15 @@ void hybridSort(std::vector<int>& arr, int left, int right, int threshold = 10) 
 }
 
 int main() {
-    std::vector<int> arr = {38, 27, 43, 3, 9, 82, 10};
+    vector<int> arr = {38, 27, 43, 3, 9, 82, 10};
 
     hybridSort(arr, 0, arr.size() - 1);
 
-    std::cout << "Sorted array: ";
+    cout << "Sorted array: ";
     for (int num : arr) {
-        std::cout << num << " ";
+        cout << num << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     return 0;
 }
